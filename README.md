@@ -1,4 +1,4 @@
-Sgittle v1.0
+Shuttle v1.0
 ============
 
 ## News
