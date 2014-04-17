@@ -7,15 +7,7 @@ Sgittle v1.0
 ## How to Use It
 ``` javascript
 $(function() {
-  $(select).shuttle({
-    srcTitle: "Member",
-    dstTitle: "Group",
-    dstValue: {
-      "Penny" : "penny",
-      "Brain" : "brain",
-      "Kenny" : "kenny",
-    }
-  });
+  $(select).shuttle();
 });
 ```
 ## API
