@@ -11,12 +11,19 @@ $(function() {
 });
 ```
 ## API
-### Required
-
 ### Options
+- `filter` <br/>
+- `srcTitle` <br/>
+- `dstTitle` <br/>
+- `dstValue` <br/>
 
 ### Events
-
+- `reset` <br/>
+- `removeAll` <br/>
+- `srcTitle` <br/>
+- `dstTitle` <br/>
+- `disable` <br/>
+- `enable` <br/>
 
 ## About
 author:Archer<br/>
