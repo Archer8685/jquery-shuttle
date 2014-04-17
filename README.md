@@ -6,9 +6,7 @@ Sgittle v1.0
 
 ## How to Use It
 ``` javascript
-$(function() {
-  $(select).shuttle();
-});
+$(select).shuttle();
 ```
 ## API
 ### Options
