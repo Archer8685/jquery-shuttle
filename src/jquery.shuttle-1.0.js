@@ -4,7 +4,7 @@
  * @description jQuery 連接式多選清單,支援jQuery UI
  * @version 1.0.0
  * @author Archer Hsieh
- * @date 2013/07/28
+ * @date 2014/04/17
  * 
  * @copyright Copyright 2013 ARES International Corp. all rights reserved.
  */
