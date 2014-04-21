@@ -30,5 +30,5 @@ just add `shuttle_select` in class and set `multiple` to your select.
 - `enable` <br/>enable shuttle function.
 
 ## About
-author:Archer<br/>
+author:Archer Hsieh<br/>
 e-mail: kevin8685@gmail.com
