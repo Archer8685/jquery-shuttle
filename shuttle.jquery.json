@@ -1,6 +1,6 @@
 {
   "name": "shuttle",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "title": "Shuttle",
   "description": "A jQuery plugin that is a shuttle box ui.",
   "keywords": [
@@ -9,7 +9,9 @@
     "jquery-ui",
     "shuttle",
     "theme",
-    "ui"
+    "ui",
+    "select",
+    "multiselect"
   ],
   "homepage": "https://github.com/Archer8685/jquery-shuttle",
   "author": {
