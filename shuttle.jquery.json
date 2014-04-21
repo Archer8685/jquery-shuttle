@@ -1,0 +1,32 @@
+{
+  "name": "shuttle",
+  "version": "1.0.0",
+  "title": "Shuttle",
+  "description": "A jQuery plugin that is a shuttle box ui.",
+  "keywords": [
+    "jquery",
+    "plugin",
+    "jquery-ui",
+    "shuttle",
+    "theme",
+    "ui"
+  ],
+  "homepage": "https://github.com/Archer8685/jquery-shuttle",
+  "author": {
+    "name": "Archer Hsieh",
+    "url": "http://archerhsieh.webuda.com/"
+  },
+  "bugs": "https://github.com/Archer8685/jquery-shuttle/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Archer8685/jquery-shuttle/blob/master/LICENSE.md"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.91",
+    "jquery-ui": ">=1.10.1"
+  },
+  "docs": "https://github.com/Archer8685/jquery-shuttle/blob/master/README.md",
+  "demo": "http://archerhsieh.webuda.com/jquery-shuttle/examples/"
+}
