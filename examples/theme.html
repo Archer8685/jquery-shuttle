@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html>
 <head>
-    <title>Jquery Shuttle Example</title>
+    <title>Shuttle jQuery Plugin</title>
     
     <script type="text/javascript" language="javascript" src="../jquery/jquery-1.9.1.js"></script>
     <script type="text/javascript" language="javascript" src="../jquery/jquery-ui-1.10.3.custom.js"></script>
@@ -11,20 +11,38 @@
     <link rel="stylesheet" type="text/css" href="../src/jquery.shuttle.css" />
     <link rel="stylesheet" type="text/css" href="example.css" />
     <script type="text/javascript">
+        var switchTheme = function(e) {
+          var theme = $(this).val();
+          $("link").each(function() {
+              var href = $(this).attr("href");
+              if(href.indexOf("jquery-ui.css") > -1){
+                  $(this).remove();
+              }
+          });
+          $("head").append('<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/' + theme + '/jquery-ui.css" rel="stylesheet" />');
+        };
         $(function() {
           var shuttle = $("#querySelect");
           shuttle.shuttle({
             srcTitle: "Member",
-            dstTitle: "Group",
-            filter: true
+            dstTitle: "Group"
           });
           
+          $("#themeSel").change(switchTheme);
         });
     </script>
 </head>
 <body>
-<h1>Jquery Shuttle Example</h1>
-<h3>Ftiler Search</h3>
+<h1>Shuttle jQuery Plugin</h1>
+<h3>Theme</h3>
+Select Theme:
+<select name="themeSel" id="themeSel">
+  <option value="">---Select---</option>
+  <option value="vader">Vader</option>
+  <option value="black-tie">Black Tie</option>
+  <option value="blitzer">Blitzer</option>
+  <option value="cupertino">Cupertino</option>
+</select>
 <form id="jForm" name="jForm">
 <div id="querySelectDiv">
     <select id="querySelect" name="querySelect" multiple="multiple" class="shuttle_select">
@@ -36,5 +54,6 @@
     </select>
 </div>
 </form>
+<div style="margin-top:1em;">-- <a href="https://github.com/Archer8685" title="Archer Hsieh, front-end developer" target="_blank">Archer Hsieh</a></div>
 </body>
 </html>
