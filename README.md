@@ -1,5 +1,7 @@
 Shuttle v1.0
 ============
+##Demos & Examples
+[Demos](http://archerhsieh.webuda.com/jquery-shuttle/examples/)
 
 ## News
 17/04/2014:release.
