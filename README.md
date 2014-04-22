@@ -1,4 +1,4 @@
-Shuttle v1.0
+Shuttle v0.2.0
 ============
 ##Demos & Examples
 [Demos](http://archerhsieh.webuda.com/jquery-shuttle/examples/)
@@ -26,8 +26,6 @@ just add `shuttle_select` in class and set `multiple` to your select.
 ### Events
 - `reset` <br/>reset shuttle value.
 - `removeAll` <br/>remove all option.
-- `srcTitle` <br/>set source select title.
-- `dstTitle` <br/>set target select title.
 - `disable` <br/>disable shuttle function.
 - `enable` <br/>enable shuttle function.
 
