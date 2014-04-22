@@ -4,7 +4,8 @@ Shuttle v0.2.0
 [Demos](http://archerhsieh.webuda.com/jquery-shuttle/examples/)
 
 ## News
-17/04/2014:release.
+22/04/2014: remove `srcTitle` and `dstTitle` event.
+17/04/2014: release.
 
 ## How to Use It
 ###javascript
