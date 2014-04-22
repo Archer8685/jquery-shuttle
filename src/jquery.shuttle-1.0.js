@@ -76,23 +76,20 @@
                 $src.before($input).after($dst).after($controls);
                 $src.wrap('<div id="shuttle-container-src" class="shuttle-container-src"/>');
                 $dst.wrap('<div id="shuttle-container-dst" class="shuttle-container-dst"/>');
-                $input.next().andSelf().wrapAll('<div id="shuttle-container-filter"/>');
-                $('#shuttle-container-filter').nextUntil('#shuttle-container-dst').wrapAll('<div id="shuttle-container">');
-                $('#shuttle-container-filter').
-                prependTo('#shuttle-container');
-                $('#shuttle-container-dst').
-                appendTo('#shuttle-container');
+                $filter = $('<div id="shuttle-container-filter"/>');
+                $input.next().andSelf().wrapAll($filter);
+                $filter.nextUntil('#shuttle-container-dst').wrapAll('<div id="shuttle-container">');
+                $filter.prependTo('#shuttle-container');
+                $('#shuttle-container-dst').appendTo('#shuttle-container');
                 
                 if(opts.srcTitle && opts.srcTitle != ""){
-                	$("#shuttle-container-src")
-                	.prepend("<div id='shuttle-title-src' class='ui-widget ui-widget-header'>"
+                	$src.before("<div id='shuttle-title-src' class='ui-widget ui-widget-header'>"
                 			+ opts.srcTitle
                 			+ "</div>");
                 }
                 
                 if(opts.dstTitle && opts.dstTitle != ""){
-                	$("#shuttle-container-dst")
-                	.prepend("<div id='shuttle-title-dst' class='ui-widget ui-widget-header'>"
+                	$dst.before("<div id='shuttle-title-dst' class='ui-widget ui-widget-header'>"
                 			+ opts.dstTitle
                 			+ "</div>");
                 }
@@ -163,20 +160,6 @@
           $ele.children("option").each(function() {
             $(this).remove()
           });
-        },
-        srcTitle: function(title) {
-        	if($("#shuttle-title-src").length <= 0){
-            $("#shuttle-container-src").prepend("<div id='shuttle-title-src' class='ui-widget ui-widget-header'>" + title + "</div>");
-          } else {
-            $("#shuttle-title-src").html(title);
-          }
-        },
-        dstTitle: function(title) {
-        	if($("#shuttle-title-dst").length <= 0){
-            	$("#shuttle-container-dst").prepend("<div id='shuttle-title-dst' class='ui-widget ui-widget-header'>" + title + "</div>");
-        	} else {
-        		$("#shuttle-title-dst").html(title);
-        	}
         },
         disable: function() {
         	$("#shuttle-dst").prop("disabled", true);
