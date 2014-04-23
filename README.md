@@ -1,7 +1,7 @@
 Shuttle v0.2.0
 ============
 ##Demos & Examples
-[Demos](http://archerhsieh.webuda.com/jquery-shuttle/examples/)
+[Demos](http://archerproxyserver.appspot.com/jquery-shuttle/examples/index.html)
 
 ## News
 22/04/2014: remove `srcTitle` and `dstTitle` event.<br/>
