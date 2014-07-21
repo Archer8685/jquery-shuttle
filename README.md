@@ -4,7 +4,8 @@ Shuttle v0.2.1
 [Demos](http://archerproxyserver.appspot.com/jquery-shuttle/examples/index.html)
 
 ## News
-22/04/2014: remove `srcTitle` and `dstTitle` event.<br/>
+21/07/2014: modify option `dstValue` format.<br/>
+22/04/2014: remove options `srcTitle` and `dstTitle` event.<br/>
 17/04/2014: release.
 
 ## How to Use It

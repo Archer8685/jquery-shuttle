@@ -23,15 +23,15 @@
           });
           $("head").append('<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/' + theme + '/jquery-ui.css" rel="stylesheet" />');
         };
+        var options = [];
+        options.push({name: "Penny", value: "penny"});
+        options.push({name: "Brain", value: "brain"});
+        options.push({name: "Kenny", value: "kenny"});
         $(function() {
           $("#shuttleSel1").shuttle({
             srcTitle: "Member",
             dstTitle: "Group",
-            dstValue: {
-              "Penny" : "penny",
-              "Brain" : "brain",
-              "Kenny" : "kenny",
-            }
+            dstValue: options
           });
           
           $("#jForm").submit(function() {
