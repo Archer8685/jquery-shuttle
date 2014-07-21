@@ -17,7 +17,7 @@
         		filter: false,
         		srcTitle: "",
         		dstTitle: "",
-            dstValue: {}
+                dstValue: {}
         	};
         	
         	var opts = $.extend({}, defaults, opts);
@@ -32,14 +32,13 @@
                     id: 'shuttle-dst'
                 });
                 var $attr = $src.prop("attributes");
-
+                
                /* 複製來源select名稱並加上-dst到目標select */
                 $.each($attr, function() {
                     if (this.name != 'id') {
                         if (this.name == 'name') {
                             $dst.attr(this.name, this.value + 'Dst');
-                        }
-                        else {
+                        } else {
                             $dst.attr(this.name, this.value);
                         }
                     }
@@ -54,11 +53,11 @@
                 
                 if (opts.dstValue && typeof opts.dstValue === 'object') {
                   for (var i in opts.dstValue) {
-                    var o = "<option value=" + opts.dstValue[i] + ">" + i + "</option>";
+                    var o = "<option value=" + opts.dstValue[i]['value'] + ">" + opts.dstValue[i]['name'] + "</option>";
                     $dst.append(o);
                   }
                 }
-
+                
                 /* 建立傳遞資料列的移動按鈕 */
                 var $controls = $('<div id="shuttle-container-controls"/>')    
                 .append('<input type="button" id="shuttle-control-src-dst" class="ui-corner-all ui-state-default" value="&rsaquo;" />')
@@ -71,7 +70,7 @@
                 $dst.css('width', $src.width());
                 $dst.css('height', $src.height());
                 $dst.attr('size', $src.attr('size'));
-
+               
                 /* 建立div元素以便控制元件 */
                 $src.before($input).after($dst).after($controls);
                 $src.wrap('<div id="shuttle-container-src" class="shuttle-container-src"/>');
@@ -193,7 +192,7 @@
     $.fn.shuttle.transfer = function(src, dst, isAll) {
     	isAll = isAll || false;
     	var opt = (isAll) ? 'option' : 'option:selected';
-        dst.append($(opt , src).remove());
+    	dst.append($(opt , src).remove());
         var options = $("option", dst);
         options.sort(function(a, b) {
             return a.text.localeCompare(b.text);
