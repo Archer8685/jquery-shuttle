@@ -1,4 +1,4 @@
-Shuttle v0.2.1
+Shuttle v0.3.1
 ============
 ##Demos & Examples
 [Demos](http://archerproxyserver.appspot.com/jquery-shuttle/examples/index.html)
