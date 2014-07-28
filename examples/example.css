@@ -85,6 +85,10 @@ h3 {
   color: #00f;
 }
 
+select {
+  margin-bottom: 1em;
+}
+
 pre {
   line-height: 16px;
   padding: 5px 5px 5px 10px;
