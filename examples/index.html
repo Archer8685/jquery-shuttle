@@ -38,7 +38,7 @@
           });
           
           $("#jForm").submit(function() {
-            $("#shuttle-dst").children("option").prop("selected", true);
+            $(":input[name='shuttleSel2Dst']").children("option").prop("selected", true);
             alert($(this).serialize());
             return false;
           });
@@ -77,20 +77,16 @@
     <h2>Examples:</h2>
     <div class="block">
       <h3>Basic</h3>
-      <form id="jForm" name="jForm">
-        <div id="querySelectDiv">
-            <select id="shuttleSel1" name="shuttleSel1" class="shuttle_select">
-              <option value="archer">Archer</option>
-              <option value="amy">Amy</option>
-              <option value="kevin">Kevin</option>
-              <option value="sam">Sam</option>
-              <option value="tom">Tom</option>
-            </select>
-        </div>
-      </form>
-            <div class="code">
-        <pre>$("#shuttleSel1").shuttle();</pre>
+      <div class="main">
+          <select id="shuttleSel1" name="shuttleSel1" class="shuttle_select">
+            <option value="archer">Archer</option>
+            <option value="amy">Amy</option>
+            <option value="kevin">Kevin</option>
+            <option value="sam">Sam</option>
+            <option value="tom">Tom</option>
+          </select>
       </div>
+      <pre>$("#shuttleSel1").shuttle();</pre>
     </div>
     <div class="block">
       <h3>Options And Events</h3>
@@ -100,7 +96,7 @@
         <span class="button" id="disableBtn">Disable</span>
       </div>
       <form id="jForm" name="jForm">
-        <div id="querySelectDiv">
+        <div class="main">
             <select id="shuttleSel2" name="shuttleSel2" class="shuttle_select">
               <option value="archer">Archer</option>
               <option value="amy">Amy</option>
@@ -109,8 +105,10 @@
               <option value="tom">Tom</option>
             </select>
         </div>
+        <div id="queryBtntDiv">
+          <input type="submit" name="jqBtnSend" id="jqBtnSend" value="Send" />
+        </div>
       </form>
-            <div class="code">
         <pre>
 var options = [];
 options.push({name: "Penny", value: "penny"});
@@ -125,7 +123,7 @@ $("#shuttleSel1").shuttle({
 });
 
 $("#jForm").submit(function() {
-  $("#shuttle-dst").children("option").prop("selected", true);
+  $(":input[name='shuttleSel2Dst']").children("option").prop("selected", true);
   alert($(this).serialize());
   return false;
 });
@@ -148,7 +146,6 @@ $("#disableBtn").bind("click", function() {
     $(this).html("Disable");
   }
 });</pre>
-      </div>
     </div>
     <div class="block">
       <h3>Append Jquery UI Theme</h3>
@@ -160,7 +157,7 @@ $("#disableBtn").bind("click", function() {
         <option value="blitzer">Blitzer</option>
         <option value="cupertino">Cupertino</option>
       </select>
-      <div id="querySelectDiv">
+      <div class="main">
           <select id="shuttleSel3" name="shuttleSel3" class="shuttle_select">
             <option value="archer">Archer</option>
             <option value="amy">Amy</option>

@@ -24,15 +24,15 @@ h3 {
 .wrapper {
   width: 800px;
   background: #fff;
-  padding: 10px;
+  padding: 10px 50px 10px 10px;
   margin: 0 auto;
   position: relative;
   padding-bottom: 3em;
 }
 
-#queryBtntDiv {
+.main {
   margin-top: 1em;
-  margin-left: 178px;
+  margin-bottom: 1em;
 }
 
 .btns {
@@ -77,16 +77,16 @@ h3 {
   padding: 20px;
 }
 
+#queryBtntDiv {
+  margin-left: 178px;
+}
+
 .author {
   position: absolute;
   bottom: 1em;
   right: 10px;
   margin-top:2em;
   color: #00f;
-}
-
-select {
-  margin-bottom: 1em;
 }
 
 pre {

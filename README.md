@@ -4,7 +4,9 @@ Shuttle v0.3.2
 [Demos](http://archerproxyserver.appspot.com/jquery-shuttle/examples/index.html)
 
 ## News
-28/07/2014: modify demo page and attribute `multiple` on select is not required.<br/>
+28/07/2014: - modify demo page 
+            - attribute `multiple` on select is not required.<br/>
+            - fix bugs.
 21/07/2014: modify option `dstValue` format.<br/>
 22/04/2014: remove options `srcTitle` and `dstTitle` event.<br/>
 17/04/2014: release.

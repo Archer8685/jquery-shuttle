@@ -42,6 +42,8 @@
                     if (this.name != 'id') {
                         if (this.name == 'name') {
                             $dst.attr(this.name, this.value + 'Dst');
+                        } else if (this.name == 'id') {
+                            $dst.attr(this.name, this.value + 'Dst');
                         } else {
                             $dst.attr(this.name, this.value);
                         }
@@ -151,13 +153,15 @@
         },
         reset: function() {
           var $ele = $(this);
-          $("#shuttle-dst").children("option").each(function() {
+          var $dst = $ele.parents("#shuttle-container-filter").next().next().children("#shuttle-dst");
+          $dst.children("option").each(function() {
             $ele.append($(this).remove());
           });
         },
         removeAll: function() {
           var $ele = $(this);
-          $("#shuttle-dst").children("option").each(function() {
+          var $dst = $ele.parents("#shuttle-container-filter").next().next().children("#shuttle-dst");
+          $dst.children("option").each(function() {
             $(this).remove()
           });
           $ele.children("option").each(function() {
@@ -165,20 +169,26 @@
           });
         },
         disable: function() {
-        	$("#shuttle-dst").prop("disabled", true);
+          var $ele = $(this);
+          var $btns = $ele.parents("#shuttle-container-filter").next();
+          var $dst = $ele.parents("#shuttle-container-filter").next().next().children("#shuttle-dst");
+        	$dst.prop("disabled", true);
         	$(this).prop("disabled", true);
-        	$("#shuttle-control-src-dst").prop("disabled", true);
-        	$("#shuttle-control-dst-src").prop("disabled", true);
-        	$("#shuttle-control-all-src-dst").prop("disabled", true);
-        	$("#shuttle-control-all-dst-src").prop("disabled", true);
+        	$btns.find("#shuttle-control-src-dst").prop("disabled", true);
+        	$btns.find("#shuttle-control-dst-src").prop("disabled", true);
+        	$btns.find("#shuttle-control-all-src-dst").prop("disabled", true);
+        	$btns.find("#shuttle-control-all-dst-src").prop("disabled", true);
         },
         enable: function() {
-        	$("#shuttle-dst").prop("disabled", false);
+          var $ele = $(this);
+          var $btns = $ele.parents("#shuttle-container-filter").next();
+          var $dst = $ele.parents("#shuttle-container-filter").next().next().children("#shuttle-dst");
+        	$dst.prop("disabled", false);
         	$(this).prop("disabled", false);
-        	$("#shuttle-control-src-dst").prop("disabled", false);
-        	$("#shuttle-control-dst-src").prop("disabled", false);
-        	$("#shuttle-control-all-src-dst").prop("disabled", false);
-        	$("#shuttle-control-all-dst-src").prop("disabled", false);
+        	$btns.find("#shuttle-control-src-dst").prop("disabled", false);
+        	$btns.find("#shuttle-control-dst-src").prop("disabled", false);
+        	$btns.find("#shuttle-control-all-src-dst").prop("disabled", false);
+        	$btns.find("#shuttle-control-all-dst-src").prop("disabled", false);
         }
     };
 
