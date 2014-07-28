@@ -23,15 +23,18 @@
           });
           $("head").append('<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/' + theme + '/jquery-ui.css" rel="stylesheet" />');
         };
-        var options = [];
-        options.push({name: "Penny", value: "penny"});
-        options.push({name: "Brain", value: "brain"});
-        options.push({name: "Kenny", value: "kenny"});
         $(function() {
-          $("#shuttleSel1").shuttle({
+          $("#shuttleSel1").shuttle();
+          
+          var options = [];
+          options.push({name: "Penny", value: "penny"});
+          options.push({name: "Brain", value: "brain"});
+          options.push({name: "Kenny", value: "kenny"});
+          $("#shuttleSel2").shuttle({
             srcTitle: "Member",
             dstTitle: "Group",
-            dstValue: options
+            dstValue: options,
+            filter: true
           });
           
           $("#jForm").submit(function() {
@@ -41,28 +44,22 @@
           });
           
           $("#resetBtn").bind("click", function() {
-            $("#shuttleSel1").shuttle("reset");
+            $("#shuttleSel2").shuttle("reset");
           });
           
           $("#removeBtn").bind("click", function() {
-            $("#shuttleSel1").shuttle("removeAll");
+            $("#shuttleSel2").shuttle("removeAll");
           });
           
           $("#disableBtn").bind("click", function() {
             var text = $(this).text();
             if (text === "Disable") {
-              $("#shuttleSel1").shuttle("disable");
+              $("#shuttleSel2").shuttle("disable");
               $(this).html("Enable");
             } else if (text === "Enable") {
-              $("#shuttleSel1").shuttle("enable");
+              $("#shuttleSel2").shuttle("enable");
               $(this).html("Disable");
             }
-          });
-          
-          $("#shuttleSel2").shuttle({
-            srcTitle: "Member",
-            dstTitle: "Group",
-            filter: true
           });
           
           $("#shuttleSel3").shuttle({
@@ -75,56 +72,124 @@
     </script>
 </head>
 <body>
-  <h1>Shuttle jQuery Plugin</h1>
-  <h2>Example 1: Basic</h2>
-  <h3>methods</h3>
-  <div class="btns">
-    <span class="button" id="resetBtn">Reset</span>
-    <span class="button" id="removeBtn">Remove All</span>
-    <span class="button" id="disableBtn">Disable</span>
-  </div>
-  <form id="jForm" name="jForm">
-    <div id="querySelectDiv">
-        <select id="shuttleSel1" name="shuttleSel1" multiple="multiple" class="shuttle_select">
-          <option value="archer">Archer</option>
-          <option value="amy">Amy</option>
-          <option value="kevin">Kevin</option>
-          <option value="sam">Sam</option>
-          <option value="tom">Tom</option>
-        </select>
+  <div class="wrapper">
+    <h1>Shuttle jQuery Plugin</h1>
+    <h2>Examples:</h2>
+    <div class="block">
+      <h3>Basic</h3>
+      <form id="jForm" name="jForm">
+        <div id="querySelectDiv">
+            <select id="shuttleSel1" name="shuttleSel1" class="shuttle_select">
+              <option value="archer">Archer</option>
+              <option value="amy">Amy</option>
+              <option value="kevin">Kevin</option>
+              <option value="sam">Sam</option>
+              <option value="tom">Tom</option>
+            </select>
+        </div>
+        <div id="queryBtntDiv">
+            <input type="submit" name="jqBtnSend" id="jqBtnSend" value="Send" />
+        </div>
+      </form>
+            <div class="code">
+        <pre>$("#shuttleSel1").shuttle();</pre>
+      </div>
     </div>
-    <div id="queryBtntDiv">
-        <input type="submit" name="jqBtnSend" id="jqBtnSend" value="Send" />
+    <div class="block">
+      <h3>Options And Events</h3>
+      <div class="btns">
+        <span class="button" id="resetBtn">Reset</span>
+        <span class="button" id="removeBtn">Remove All</span>
+        <span class="button" id="disableBtn">Disable</span>
+      </div>
+      <form id="jForm" name="jForm">
+        <div id="querySelectDiv">
+            <select id="shuttleSel2" name="shuttleSel2" class="shuttle_select">
+              <option value="archer">Archer</option>
+              <option value="amy">Amy</option>
+              <option value="kevin">Kevin</option>
+              <option value="sam">Sam</option>
+              <option value="tom">Tom</option>
+            </select>
+        </div>
+      </form>
+            <div class="code">
+        <pre>
+var options = [];
+options.push({name: "Penny", value: "penny"});
+options.push({name: "Brain", value: "brain"});
+options.push({name: "Kenny", value: "kenny"});
+
+$("#shuttleSel1").shuttle({
+  srcTitle: "Member",
+  dstTitle: "Group",
+  dstValue: options,
+  filter: true
+});
+
+$("#jForm").submit(function() {
+  $("#shuttle-dst").children("option").prop("selected", true);
+  alert($(this).serialize());
+  return false;
+});
+
+$("#resetBtn").bind("click", function() {
+  $("#shuttleSel2").shuttle("reset");
+});
+
+$("#removeBtn").bind("click", function() {
+  $("#shuttleSel2").shuttle("removeAll");
+});
+
+$("#disableBtn").bind("click", function() {
+  var text = $(this).text();
+  if (text === "Disable") {
+    $("#shuttleSel2").shuttle("disable");
+    $(this).html("Enable");
+  } else if (text === "Enable") {
+    $("#shuttleSel2").shuttle("enable");
+    $(this).html("Disable");
+  }
+});</pre>
+      </div>
     </div>
-  </form>
-  <h2>Example 2: Ftiler</h2>
-  <div id="querySelectDiv">
-    <select id="shuttleSel2" name="shuttleSel2" multiple="multiple" class="shuttle_select">
-      <option value="archer">Archer</option>
-      <option value="amy">Amy</option>
-      <option value="kevin">Kevin</option>
-      <option value="sam">Sam</option>
-      <option value="tom">Tom</option>
-    </select>
-  </div>
-  <h2>Example 3: Jquery UI Theme</h2>
-  Select Theme:
-  <select name="themeSel" id="themeSel">
-    <option value="">---Select---</option>
-    <option value="vader">Vader</option>
-    <option value="black-tie">Black Tie</option>
-    <option value="blitzer">Blitzer</option>
-    <option value="cupertino">Cupertino</option>
-  </select>
-  <div id="querySelectDiv">
-      <select id="shuttleSel3" name="shuttleSel3" multiple="multiple" class="shuttle_select">
-        <option value="archer">Archer</option>
-        <option value="amy">Amy</option>
-        <option value="kevin">Kevin</option>
-        <option value="sam">Sam</option>
-        <option value="tom">Tom</option>
+    <div class="block">
+      <h3>Append Jquery UI Theme</h3>
+      Select Theme:
+      <select name="themeSel" id="themeSel">
+        <option value="">---Select---</option>
+        <option value="vader">Vader</option>
+        <option value="black-tie">Black Tie</option>
+        <option value="blitzer">Blitzer</option>
+        <option value="cupertino">Cupertino</option>
       </select>
+      <div id="querySelectDiv">
+          <select id="shuttleSel3" name="shuttleSel3" class="shuttle_select">
+            <option value="archer">Archer</option>
+            <option value="amy">Amy</option>
+            <option value="kevin">Kevin</option>
+            <option value="sam">Sam</option>
+            <option value="tom">Tom</option>
+          </select>
+      </div>
+      <pre>
+$("#themeSel").change(function(e) {
+  var theme = $(this).val();
+  $("link").each(function() {
+      var href = $(this).attr("href");
+      if(href.indexOf("jquery-ui.css") > -1){
+          $(this).remove();
+      }
+  });
+  $("head").append('<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/' + theme + '/jquery-ui.css" rel="stylesheet" />');
+});
+
+$("#shuttleSel3").shuttle({
+  srcTitle: "Member",
+  dstTitle: "Group"
+});</pre>
+    </div>
+    <div class="author">-- <a href="https://github.com/Archer8685" title="Archer Hsieh, front-end developer" target="_blank">Archer Hsieh</a></div>
   </div>
-  <div style="margin-top:1em;">-- <a href="https://github.com/Archer8685" title="Archer Hsieh, front-end developer" target="_blank">Archer Hsieh</a></div>
 </body>
 </html>

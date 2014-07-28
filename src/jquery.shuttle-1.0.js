@@ -2,7 +2,7 @@
  * jquery.shuttle.js
  * 
  * @description jQuery 連接式多選清單,支援jQuery UI
- * @version 1.0.0
+ * @version 0.3.2
  * @author Archer Hsieh
  * @date 2014/04/17
  * 
@@ -24,6 +24,10 @@
             return this.each(function() {
             	
                 var $src = $(this);
+                
+                if (!$src.attr("multiple")) {
+                  $src.attr("multiple", "multiple");
+                }
                 
                 $src.addClass("ui-state-default");
                 
