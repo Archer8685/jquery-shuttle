@@ -6,7 +6,7 @@ Shuttle v0.3.2
 ## News
 28/07/2014: attribute -multiple on select is not required.<br/>
 21/07/2014: modify option `dstValue` format.<br/>
-22/04/2014: remove options `srcTitle` and `dstTitle` event.<br/>
+22/04/2014: remove events `srcTitle` and `dstTitle`.<br/>
 17/04/2014: release.
 
 ## How to Use It
