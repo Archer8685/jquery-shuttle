@@ -2,7 +2,7 @@
  * jquery.shuttle.js
  * 
  * @description jQuery 連接式多選清單,支援jQuery UI
- * @version 0.3.2
+ * @version 0.3.3
  * @author Archer Hsieh
  * @date 2014/04/17
  * 
