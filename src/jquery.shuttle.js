@@ -49,7 +49,9 @@
                         }
                     }
                 });
-
+                
+                $dst.addClass('shuttle_select_dst');
+                
                 /* 建立用regex驗證的篩選欄位 */
                 var $input = $('<input/>', {
                     id: 'shuttle-filter',
@@ -214,6 +216,11 @@
         dst.empty().append(options);
     };
     
+    $(function() {
+			$(document).delegate('form', 'submit', function() {
+				$("select.shuttle_select_dst").children("option").prop("selected", true);
+			});
+		});
 })(jQuery);
 
 var diacritics = [

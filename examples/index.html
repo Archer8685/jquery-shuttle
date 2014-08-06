@@ -37,11 +37,6 @@
             filter: true
           });
           
-          $("#jForm").submit(function() {
-            $(":input[name='shuttleSel2Dst']").children("option").prop("selected", true);
-            alert($(this).serialize());
-            return false;
-          });
           
           $("#resetBtn").bind("click", function() {
             $("#shuttleSel2").shuttle("reset");
@@ -105,9 +100,6 @@
               <option value="tom">Tom</option>
             </select>
         </div>
-        <div id="queryBtntDiv">
-          <input type="submit" name="jqBtnSend" id="jqBtnSend" value="Send" />
-        </div>
       </form>
         <pre>
 var options = [];
@@ -120,12 +112,6 @@ $("#shuttleSel1").shuttle({
   dstTitle: "Group",
   dstValue: options,
   filter: true
-});
-
-$("#jForm").submit(function() {
-  $(":input[name='shuttleSel2Dst']").children("option").prop("selected", true);
-  alert($(this).serialize());
-  return false;
 });
 
 $("#resetBtn").bind("click", function() {
